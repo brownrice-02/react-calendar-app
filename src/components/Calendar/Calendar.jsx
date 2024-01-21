@@ -1,21 +1,22 @@
 // Calendar.js
+import { useState } from "react";
 import getWeeksInMonth from "../../utils/dateUtils";
 import moment from "moment";
 import styles from "./Calendar.module.scss";
 
 const Calendar = () => {
-  let weekContentList = getWeeksInMonth();
-  let result = [];
+  const [currentMonth, setCurrentMonth] = useState(moment());
 
   const prevMonth = () => {
-    // 實現上一月邏輯
-    // ...
+    setCurrentMonth(currentMonth.clone().subtract(1, "month"));
   };
 
   const nextMonth = () => {
-    // 實現下一月邏輯
-    // ...
+    setCurrentMonth(currentMonth.clone().add(1, "month"));
   };
+
+  const weekContentList = getWeeksInMonth(currentMonth);
+  let result = [];
 
   return (
     <div className={styles.calendarContainer}>
@@ -25,8 +26,8 @@ const Calendar = () => {
           {"<"}
         </button>
         <div>
-          <span>{moment().format("YYYY")}年</span>
-          <span>{moment().format("MM")}月</span>
+          <span>{currentMonth.format("YYYY")}年</span>
+          <span>{currentMonth.format("MM")}月</span>
         </div>
         <button onClick={nextMonth} className={styles.monthSelect}>
           {">"}
@@ -39,7 +40,7 @@ const Calendar = () => {
           week.map((day, dIdx) =>
             aWeek.push(
               <span className={styles.dayButtons} key={`${day}-${dIdx}`}>
-                {day === 0 ? "" : day}
+                {day === 0 ? "" : day + "日"}
               </span>
             )
           );
