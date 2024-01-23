@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>React Calendar Task1</h1>
+      <h1>React Calendar</h1>
       <Calendar />
     </>
   );

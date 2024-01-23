@@ -1,8 +1,15 @@
-# React + Vite
+# React Calendar App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Calendar Component is a React-based calendar that allows users to navigate through months, select start and end dates, and highlights today's date.
 
-Currently, two official plugins are available:
+## Getting Started
+To use the Calendar Component in your project, follow these steps:
+ ```bash
+git clone https://github.com/brownrice-02/react-calendar-app.git
+cd react-calendar-app/
+yarn install
+yarn run dev
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
+![image](public/overview.png)
