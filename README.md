@@ -12,4 +12,4 @@ yarn run dev
 ```
 
 ## Screenshots
-![image](public/overview.png)
+![image](public/Overview.png)
