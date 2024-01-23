@@ -16,7 +16,6 @@ const Calendar = () => {
   };
 
   const weekContentList = getWeeksInMonth(currentMonth);
-  let result = [];
 
   return (
     <div className={styles.calendarContainer}>
@@ -37,20 +36,26 @@ const Calendar = () => {
       <div className={styles.calendarBody}>
         {weekContentList.map((week, wIdx) => {
           let aWeek = [];
-          week.map((day, dIdx) =>
+          week.map((dayData, dIdx) =>
             aWeek.push(
-              <span className={styles.dayButtons} key={`${day}-${dIdx}`}>
-                {day === 0 ? "" : day + "日"}
+              <span
+                className={`${styles.dayButtons} ${
+                  dayData.isCurrentMonth
+                    ? styles.currentMonth
+                    : styles.nonCurrentMonth
+                }`}
+                key={`${dayData.date}-${dIdx}`}
+              >
+                {dayData.date === 0 ? "" : dayData.date + "日"}
               </span>
             )
           );
-          result.push(
+          return (
             <div className={styles.aweek} key={`${week}-${wIdx}`}>
               {aWeek}
             </div>
           );
         })}
-        {result}
       </div>
     </div>
   );
