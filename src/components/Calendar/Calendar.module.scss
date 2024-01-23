@@ -54,17 +54,34 @@
             background-color: #e6e6e6;
           }
   
-          &:active {
-            background-color: #006edc;
-          }
+          // &:active {
+          //   background-color: #006edc;
+          //   color: white; 
+          // }
 
           &.currentMonth {
             color: black;
           }
   
           &.nonCurrentMonth {
-            color: grey;
+            color: #757575;
+            cursor: not-allowed;
+            pointer-events: none;
           }
+
+          &.today {
+            background-color: #ffff76;
+          }
+
+          &.selectedDate,
+          &.startDate {
+            background-color: #006edc;
+            color: white;
+
+          &:hover {
+            background-color: #006edc;
+          }
+        }
         }
       }
 

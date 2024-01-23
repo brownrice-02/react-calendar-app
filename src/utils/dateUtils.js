@@ -64,6 +64,6 @@ export default function getWeeksInMonth(mmt) {
     loopStatus = result["isFinished"];
   }
 
-  console.log("weekDayList", weekDayList);
+  // console.log("weekDayList", weekDayList);
   return weekDayList;
 }
